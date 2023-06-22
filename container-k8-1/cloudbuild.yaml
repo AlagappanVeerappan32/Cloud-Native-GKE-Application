@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/kubernetes-assignment-390002/my-repo/container1', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/kubernetes-assignment-390002/my-repo/container1']
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+    - 'run'
+    - '--filename=kub_resource/'
+    - '--location=us-central1-c'
+    - '--cluster=cluster-1'
+
+
+  

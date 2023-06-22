@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labels:
+    app: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: container1
+          image: us-central1-docker.pkg.dev/kubernetes-assignment-390002/my-repo/container1
+          ports:
+            - containerPort: 6000
+          volumeMounts:
+            - name: my-pv-storage
+              mountPath: /Alagappan_PV_dir
+        - name: container2
+          image: us-central1-docker.pkg.dev/kubernetes-assignment-390002/my-repo-2/container2
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: my-pv-storage
+              mountPath: /Alagappan_PV_dir
+      volumes:
+        - name: my-pv-storage
+          persistentVolumeClaim:
+            claimName: my-pvc
