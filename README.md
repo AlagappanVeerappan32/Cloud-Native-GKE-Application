@@ -40,6 +40,9 @@ This repository includes:
 - Deployment yaml file for deploying microservices and exposing services
 - Detailed documentation outlining the project's architecture, design principles, and instructions for setup and execution
 
+  <img width="595" alt="Screenshot 2023-08-08 at 8 00 27 PM" src="https://github.com/AlagappanVeerappan32/Cloud-Native-GKE-Application/assets/133504573/2ed4dc5f-41ad-4280-8905-5c7739c28758">
+
+
 ---
 
 ## How to Explore
